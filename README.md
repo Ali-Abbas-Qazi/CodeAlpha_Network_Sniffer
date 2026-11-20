@@ -11,8 +11,6 @@
 ![Kali Linux](https://img.shields.io/badge/Kali_Linux-VirtualBox-557C94?style=for-the-badge&logo=kalilinux&logoColor=white)
 ![Wireshark](https://img.shields.io/badge/Verified_with-Wireshark-1679A7?style=for-the-badge&logo=wireshark&logoColor=white)
 
-**CodeAlpha Cybersecurity Internship · Task 1**
-
 Ali Abbas Qazi &nbsp;·&nbsp; [LinkedIn](https://www.linkedin.com/in/ali-abbas-qazi) &nbsp;·&nbsp; [GitHub](https://github.com/Ali-Abbas-Qazi)
 
 </div>
@@ -64,7 +62,7 @@ A command-line packet sniffer written in Python with Scapy. It captures live tra
 
 ## 1. Objectives
 
-| Task requirement | How this project covers it | Evidence |
+| Objective | How this project covers it | Evidence |
 |---|---|:---:|
 | Build a Python program to capture network traffic packets | `network_sniffer.py` captures live packets with Scapy's `sniff()` | Fig. 2, 3, 4 |
 | Analyze captured packets to understand their structure and content | Each packet is broken down by layer (IP, TCP/UDP/ICMP, DNS, payload) | Fig. 4, 6, 10 |
@@ -448,7 +446,7 @@ Wireshark also gives more detail on the same packets:
 
 The sniffer captures live traffic on Kali, reports IPs, ports, protocols, TCP flags and payloads for each packet, and its counts matched Wireshark exactly on a 100-packet capture. Building it made a few things concrete that I had mostly only read about. The TCP handshake and retry behaviour are obvious once the flags are printed next to each packet. HTTPS does less for privacy than people assume, since DNS and SNI still reveal which sites are visited. And seeing a GET request show up as plain text in my own terminal was a better argument for HTTPS than any slide I've seen.
 
-The next step is turning this kind of visibility into detection, which is what Task 4 (a Snort/Suricata IDS) covers.
+A natural next step is turning this kind of visibility into detection, for example by feeding the same traffic into an IDS such as Snort or Suricata and writing rules for the patterns seen here.
 
 </div>
 
@@ -458,7 +456,7 @@ The next step is turning this kind of visibility into detection, which is what T
 
 ---
 
-**Ali Abbas Qazi** · BS Cybersecurity, HITEC University
+**Ali Abbas Qazi**
 
 [LinkedIn](https://www.linkedin.com/in/ali-abbas-qazi) &nbsp;·&nbsp; [GitHub](https://github.com/Ali-Abbas-Qazi) &nbsp;·&nbsp; [Portfolio](https://ali-abbas-qazi.github.io)
 
