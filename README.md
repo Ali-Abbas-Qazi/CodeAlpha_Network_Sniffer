@@ -421,7 +421,9 @@ A natural next step is turning this kind of visibility into detection, for examp
 
 **Ali Abbas Qazi**
 
-[LinkedIn](https://www.linkedin.com/in/ali-abbas-qazi) &nbsp;·&nbsp; [GitHub](https://github.com/Ali-Abbas-Qazi) &nbsp;·&nbsp; [Portfolio](https://ali-abbas-qazi.github.io)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Ali%20Abbas%20Qazi-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ali-abbas-qazi/)
+[![GitHub](https://img.shields.io/badge/GitHub-Ali--Abbas--Qazi-181717?style=flat&logo=github&logoColor=white)](https://github.com/Ali-Abbas-Qazi)
+[![Portfolio](https://img.shields.io/badge/Portfolio-ali--abbas--qazi.github.io-2E8B57?style=flat&logo=githubpages&logoColor=white)](https://ali-abbas-qazi.github.io)
 
 <a href="#readme-top">↑ Back to top</a>
 
