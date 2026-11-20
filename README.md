@@ -4,18 +4,22 @@
 
 # Basic Network Sniffer in Python
 
-### Live packet capture and protocol analysis with Scapy on Kali Linux
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Ali%20Abbas%20Qazi-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ali-abbas-qazi/)
+[![GitHub](https://img.shields.io/badge/GitHub-Ali--Abbas--Qazi-181717?style=flat&logo=github&logoColor=white)](https://github.com/Ali-Abbas-Qazi)
 
-![Python](https://img.shields.io/badge/Python-3.14-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Scapy](https://img.shields.io/badge/Scapy-2.7-2E8B57?style=for-the-badge)
-![Kali Linux](https://img.shields.io/badge/Kali_Linux-VirtualBox-557C94?style=for-the-badge&logo=kalilinux&logoColor=white)
-![Wireshark](https://img.shields.io/badge/Verified_with-Wireshark-1679A7?style=for-the-badge&logo=wireshark&logoColor=white)
-
-Ali Abbas Qazi &nbsp;·&nbsp; [LinkedIn](https://www.linkedin.com/in/ali-abbas-qazi) &nbsp;·&nbsp; [GitHub](https://github.com/Ali-Abbas-Qazi)
+*Live packet capture and protocol analysis with Python and Scapy, tested on Kali Linux and verified with Wireshark.*
 
 </div>
 
-<br>
+| | |
+|---|---|
+| **Project** | Command-line packet sniffer |
+| **Language** | Python 3.14 · Scapy 2.7 |
+| **Platform** | Kali Linux (VirtualBox) |
+| **Date** | November 2026 |
+| **Author** | Ali Abbas Qazi |
+| **Tools Used** | Wireshark, `nslookup`, `ping`, `curl`, Firefox |
+| **Category** | Network Security · Traffic Analysis · Python |
 
 <div align="justify">
 
@@ -25,7 +29,7 @@ A command-line packet sniffer written in Python with Scapy. It captures live tra
 
 <div align="center">
 
-| Packets analysed | Test scenarios | Protocols identified | Wireshark match |
+| Packets Analysed | Captures Run | Protocols Identified | Wireshark Match |
 |:---:|:---:|:---:|:---:|
 | **171** | **5** | **TCP · UDP · DNS · ICMP · HTTP · HTTPS** | **100 / 100** |
 
@@ -33,36 +37,24 @@ A command-line packet sniffer written in Python with Scapy. It captures live tra
 
 ---
 
-## Table of contents
+## Table of Contents
 
-<table>
-<tr>
-<td valign="top" width="50%">
-
-1. [Objectives](#1-objectives)
-2. [Lab environment](#2-lab-environment)
-3. [Repository structure](#3-repository-structure)
-4. [How the sniffer works](#4-how-the-sniffer-works)
-5. [Installation and usage](#5-installation-and-usage)
-
-</td>
-<td valign="top" width="50%">
-
-6. [Results and analysis](#6-results-and-analysis)
-7. [Security observations](#7-security-observations)
-8. [Limitations](#8-limitations)
-9. [Ethical note](#9-ethical-note)
-10. [Conclusion](#10-conclusion)
-
-</td>
-</tr>
-</table>
+- [Objectives](#objectives)
+- [Lab Environment](#lab-environment)
+- [Repository Structure](#repository-structure)
+- [How the Sniffer Works](#how-the-sniffer-works)
+- [Installation and Usage](#installation-and-usage)
+- [Results and Analysis](#results-and-analysis)
+- [Security Observations](#security-observations)
+- [Limitations](#limitations)
+- [Ethical Note](#ethical-note)
+- [Conclusion](#conclusion)
 
 ---
 
-## 1. Objectives
+## Objectives
 
-| Objective | How this project covers it | Evidence |
+| Objective | How This Project Covers It | Evidence |
 |---|---|:---:|
 | Build a Python program to capture network traffic packets | `network_sniffer.py` captures live packets with Scapy's `sniff()` | Fig. 2, 3, 4 |
 | Analyze captured packets to understand their structure and content | Each packet is broken down by layer (IP, TCP/UDP/ICMP, DNS, payload) | Fig. 4, 6, 10 |
@@ -70,38 +62,33 @@ A command-line packet sniffer written in Python with Scapy. It captures live tra
 | Use libraries like `scapy` or `socket` | Built on Scapy 2.7 | Fig. 1 |
 | Display source/destination IPs, protocols and payloads | Shown on every output line, plus a summary table at the end | Fig. 4, 5, 9 |
 
-<div align="right"><a href="#readme-top">↑ Back to top</a></div>
-
 ---
 
-## 2. Lab environment
+## Lab Environment
 
 | Item | Details |
 |---|---|
-| Operating system | Kali Linux (VirtualBox VM, NAT network mode) |
-| Capture interface | `eth0`, IP `10.0.2.15/24`, MAC `08:00:27:5a:87:bc` |
-| DNS server / gateway seen in traffic | `192.168.1.1` |
+| Operating System | Kali Linux (VirtualBox VM, NAT network mode) |
+| Capture Interface | `eth0`, IP `10.0.2.15/24`, MAC `08:00:27:5a:87:bc` |
+| DNS Server / Gateway | `192.168.1.1` |
 | Language | Python 3.14.8 |
-| Packet library | Scapy 2.7 |
-| Verification tool | Wireshark |
-| Traffic generators | Firefox, `nslookup`, `ping`, `curl` |
+| Packet Library | Scapy 2.7 |
+| Verification Tool | Wireshark |
+| Traffic Generators | Firefox, `nslookup`, `ping`, `curl` |
 
 <p align="center">
   <img src="screenshots/01_environment.png" alt="Environment setup" width="75%">
-  <br>
-  <sub><b>Figure 1:</b> <code>ifconfig</code> showing the <code>eth0</code> capture interface, plus the installed Python and Scapy versions.</sub>
 </p>
-
-<div align="right"><a href="#readme-top">↑ Back to top</a></div>
+<p align="center"><sub><b>Figure 1:</b> <code>ifconfig</code> showing the <code>eth0</code> capture interface, plus the installed Python and Scapy versions.</sub></p>
 
 ---
 
-## 3. Repository structure
+## Repository Structure
 
 ```
 CodeAlpha_Network_Sniffer/
 ├── network_sniffer.py      # the sniffer
-├── capture.pcap            # 100-packet sample capture used in section 6.6
+├── capture.pcap            # 100-packet sample capture
 ├── README.md
 └── screenshots/
     ├── 01_environment.png
@@ -118,9 +105,9 @@ CodeAlpha_Network_Sniffer/
 
 ---
 
-## 4. How the sniffer works
+## How the Sniffer Works
 
-### 4.1 Program flow
+### Program Flow
 
 ```mermaid
 flowchart LR
@@ -142,7 +129,7 @@ Scapy does the capturing. Every packet it picks up is handed to `process_packet(
 
 </div>
 
-### 4.2 What each function does
+### What Each Function Does
 
 | Function | Job |
 |---|---|
@@ -157,24 +144,21 @@ Scapy does the capturing. Every packet it picks up is handed to `process_packet(
   <img src="screenshots/02_code_protocol_address.png" alt="Protocol and address functions" width="47%">
   &nbsp;
   <img src="screenshots/03_code_payload_processing.png" alt="Payload and processing functions" width="47%">
-  <br>
-  <sub><b>Figure 2 (left):</b> <code>get_protocol()</code> and <code>get_addresses()</code>. &nbsp; <b>Figure 3 (right):</b> <code>payload_preview()</code>, <code>extra_info()</code> and the <code>process_packet()</code> callback.</sub>
 </p>
+<p align="center"><sub><b>Figure 2 (left):</b> <code>get_protocol()</code> and <code>get_addresses()</code>. &nbsp; <b>Figure 3 (right):</b> <code>payload_preview()</code>, <code>extra_info()</code> and the <code>process_packet()</code> callback.</sub></p>
 
-### 4.3 Packet layers the sniffer reads
+### Packet Layers the Sniffer Reads
 
-| OSI layer | Header | Fields shown by the tool |
+| OSI Layer | Header | Fields Shown by the Tool |
 |:---:|---|---|
-| 2 – Data link | Ethernet / ARP | MAC addresses (fallback), ARP requests and replies |
-| 3 – Network | IPv4 / IPv6 / ICMP | Source and destination IP, ICMP type |
-| 4 – Transport | TCP / UDP | Ports, TCP flags (S, SA, A, PA, F, R) |
-| 7 – Application | DNS / HTTP / raw data | DNS query name, payload text |
-
-<div align="right"><a href="#readme-top">↑ Back to top</a></div>
+| 2 · Data Link | Ethernet / ARP | MAC addresses (fallback), ARP requests and replies |
+| 3 · Network | IPv4 / IPv6 / ICMP | Source and destination IP, ICMP type |
+| 4 · Transport | TCP / UDP | Ports, TCP flags (S, SA, A, PA, F, R) |
+| 7 · Application | DNS / HTTP / raw data | DNS query name, payload text |
 
 ---
 
-## 5. Installation and usage
+## Installation and Usage
 
 <div align="justify">
 
@@ -213,21 +197,11 @@ sudo python3 network_sniffer.py -i eth0 -f "tcp port 80" -c 10
 sudo python3 network_sniffer.py -i eth0 -c 100 -o capture.pcap
 ```
 
-<div align="right"><a href="#readme-top">↑ Back to top</a></div>
-
 ---
 
-## 6. Results and analysis
+## Results and Analysis
 
-| # | Test | Filter | Packets | Traffic source | Section |
-|:---:|---|---|:---:|---|:---:|
-| 1 | Normal browsing | none | 40 | Firefox | 6.1 |
-| 2 | DNS and ICMP | `icmp or udp port 53` | 12 | `nslookup`, `ping` | 6.2 |
-| 3 | Plaintext HTTP | `tcp port 80` | 9 | `curl` | 6.3 |
-| 4 | Failed connection | `tcp port 80` | 10 | `curl` | 6.4 |
-| 5 | Saved capture + Wireshark check | none | 100 | Firefox | 6.5, 6.6 |
-
-### 6.1 Live capture of normal browsing
+### Live Capture of Normal Browsing
 
 <div align="justify">
 
@@ -237,9 +211,8 @@ I started a 40-packet capture and opened a few websites in Firefox.
 
 <p align="center">
   <img src="screenshots/04_live_capture.png" alt="Live capture" width="95%">
-  <br>
-  <sub><b>Figure 4:</b> Live capture with HTTPS, DNS and UDP traffic.</sub>
 </p>
+<p align="center"><sub><b>Figure 4:</b> Live capture with HTTPS, DNS and UDP traffic.</sub></p>
 
 <div align="justify">
 
@@ -247,15 +220,14 @@ What Figure 4 shows:
 
 - **Packets 22–24** are part of an HTTPS session with `140.248.129.91:443`. The flags show the normal back-and-forth: `PA` (push + ack) when data is sent, `A` when it's acknowledged. The payload is unreadable because TLS encrypts it.
 - **Packets 25–28** are the DNS lookup for `google.com`. The VM asks `192.168.1.1` on port 53 and gets an answer back on the same source port (44232), which is how the client matches the reply to its question. There are two queries and two responses because the system asks for both an IPv4 (A) and an IPv6 (AAAA) record, which is also why the second response is longer (98 bytes against 86).
-- **Packets 29–33** are UDP traffic to `142.250.202.14:443`, which section 6.2 confirms is `google.com`. UDP on port 443 is QUIC (HTTP/3), which browsers use with Google services. It's encrypted too, so the payload is noise.
+- **Packets 29–33** are UDP traffic to `142.250.202.14:443`, which the DNS capture below confirms is `google.com`. UDP on port 443 is QUIC (HTTP/3), which browsers use with Google services. It's encrypted too, so the payload is noise.
 
 </div>
 
 <p align="center">
   <img src="screenshots/05_live_capture_summary.png" alt="Live capture summary" width="60%">
-  <br>
-  <sub><b>Figure 5:</b> Summary for the 40-packet capture.</sub>
 </p>
+<p align="center"><sub><b>Figure 5:</b> Summary for the 40-packet capture.</sub></p>
 
 <div align="justify">
 
@@ -263,7 +235,7 @@ HTTPS made up 60% of the capture. My own VM (`10.0.2.15`) was the top source wit
 
 </div>
 
-### 6.2 DNS and ICMP with a BPF filter
+### Filtering DNS and ICMP Traffic
 
 <div align="justify">
 
@@ -273,9 +245,8 @@ To look at specific protocols on their own, I filtered on `icmp or udp port 53` 
 
 <p align="center">
   <img src="screenshots/06_dns_icmp_filter.png" alt="DNS and ICMP filter" width="100%">
-  <br>
-  <sub><b>Figure 6:</b> Filtered capture (left) next to the commands that produced the traffic (right).</sub>
 </p>
+<p align="center"><sub><b>Figure 6:</b> Filtered capture (left) next to the commands that produced the traffic (right).</sub></p>
 
 <div align="justify">
 
@@ -285,7 +256,7 @@ To look at specific protocols on their own, I filtered on `icmp or udp port 53` 
 
 </div>
 
-### 6.3 Plaintext HTTP
+### Plaintext HTTP Payload
 
 <div align="justify">
 
@@ -295,13 +266,12 @@ Next I filtered on `tcp port 80` and requested a page over plain HTTP with `curl
 
 <p align="center">
   <img src="screenshots/07_http_plaintext.png" alt="HTTP plaintext" width="100%">
-  <br>
-  <sub><b>Figure 7:</b> An unencrypted HTTP request and response. The GET line, headers and server reply are all readable in the payload.</sub>
 </p>
+<p align="center"><sub><b>Figure 7:</b> An unencrypted HTTP request and response. The GET line, headers and server reply are all readable in the payload.</sub></p>
 
 The whole conversation with `151.101.141.91:80` took nine packets:
 
-| Packets | Flags | What happens |
+| Packets | Flags | What Happens |
 |:---:|:---:|---|
 | 1–2 | `SA`, `A` | End of the TCP handshake (server's SYN-ACK, client's ACK) |
 | 3 | `PA` | Client sends `GET /success.txt HTTP/1.1..Host: detectportal.firefox.com..User-Agent: ...` |
@@ -320,7 +290,7 @@ Compare that to the HTTPS packets in Figure 4. With HTTPS, someone watching the 
 > [!NOTE]
 > The client's opening `SYN` is missing because `curl` fired a fraction of a second before the sniffer was ready, so the capture starts at the server's `SA`. Only 9 of the 10 requested packets existed, so I stopped it with Ctrl+C.
 
-### 6.4 A failed TCP connection
+### A Failed TCP Connection
 
 <div align="justify">
 
@@ -330,9 +300,8 @@ My first attempt at the HTTP test went to `neverssl.com`, and the connection nev
 
 <p align="center">
   <img src="screenshots/08_failed_tcp_connection.png" alt="Failed TCP connection" width="100%">
-  <br>
-  <sub><b>Figure 8:</b> Repeated SYN packets with no reply, then a reset; <code>curl</code> reports "Failed to connect".</sub>
 </p>
+<p align="center"><sub><b>Figure 8:</b> Repeated SYN packets with no reply, then a reset; <code>curl</code> reports "Failed to connect".</sub></p>
 
 <div align="justify">
 
@@ -342,7 +311,7 @@ Seen from the network, this is what a blocked or unreachable service looks like.
 
 </div>
 
-### 6.5 Saving a capture
+### Saving a Capture to PCAP
 
 <div align="justify">
 
@@ -352,9 +321,8 @@ I ran a 100-packet capture with `-o capture.pcap` while browsing to `www.kali.or
 
 <p align="center">
   <img src="screenshots/09_pcap_summary.png" alt="PCAP summary" width="60%">
-  <br>
-  <sub><b>Figure 9:</b> Summary of the 100-packet capture, saved to <code>capture.pcap</code>.</sub>
 </p>
+<p align="center"><sub><b>Figure 9:</b> Summary of the 100-packet capture, saved to <code>capture.pcap</code>.</sub></p>
 
 <div align="center">
 
@@ -366,7 +334,7 @@ I ran a 100-packet capture with `-o capture.pcap` while browsing to `www.kali.or
 
 </div>
 
-### 6.6 Checking the result in Wireshark
+### Verifying the Results in Wireshark
 
 <div align="justify">
 
@@ -376,13 +344,12 @@ To check that the sniffer reports traffic correctly, I opened `capture.pcap` in 
 
 <p align="center">
   <img src="screenshots/10_wireshark_verification.png" alt="Wireshark verification" width="95%">
-  <br>
-  <sub><b>Figure 10:</b> <code>capture.pcap</code> in Wireshark. 100 packets, with frame 1 broken down layer by layer at the bottom.</sub>
 </p>
+<p align="center"><sub><b>Figure 10:</b> <code>capture.pcap</code> in Wireshark. 100 packets, with frame 1 broken down layer by layer at the bottom.</sub></p>
 
 <div align="center">
 
-| Tool label | Tool count | Wireshark frames | Wireshark count | Match |
+| Tool Label | Tool Count | Wireshark Frames | Wireshark Count | Match |
 |:---:|:---:|:---:|:---:|:---:|
 | DNS | 22 | 1–17 and 30–34 | 22 | ✔ |
 | HTTP | 12 | 18–29 | 12 | ✔ |
@@ -399,17 +366,15 @@ Wireshark also gives more detail on the same packets:
 
 - **Frames 18–29** are a full HTTP conversation with `140.248.129.91`: handshake (`SYN`, `SYN, ACK`, `ACK`), `GET /success.txt?ipv4`, `HTTP/1.1 200 OK`, then the `FIN` teardown. This is Firefox's captive-portal check, which it runs over plain HTTP on purpose.
 - **Frame 38** is a TLS `Client Hello` with `SNI=www.kali.org`. HTTPS hides the content, but the name of the site still goes out unencrypted during the handshake.
-- **Frame 1** breaks down exactly as described in section 4.3: Ethernet II (VirtualBox MAC `08:00:27:5a:87:bc`), IPv4 `10.0.2.15 → 192.168.1.1`, UDP port 53, DNS query.
+- **Frame 1** breaks down exactly as described in the layer table above: Ethernet II (VirtualBox MAC `08:00:27:5a:87:bc`), IPv4 `10.0.2.15 → 192.168.1.1`, UDP port 53, DNS query.
 
 </div>
 
-<div align="right"><a href="#readme-top">↑ Back to top</a></div>
-
 ---
 
-## 7. Security observations
+## Security Observations
 
-| # | Observation | Why it matters | Evidence |
+| # | Observation | Why It Matters | Evidence |
 |:---:|---|---|:---:|
 | 1 | HTTP payloads are fully readable | Credentials, cookies and form data sent over HTTP can be read by anyone on the same network (public Wi-Fi, a compromised router). Sites should force HTTPS and use HSTS | Fig. 7, 10 |
 | 2 | DNS queries go out in plaintext | Anyone on the path can see every domain a user looks up, even if the sites use HTTPS. DNS over HTTPS/TLS fixes this | Fig. 4, 6 |
@@ -419,7 +384,7 @@ Wireshark also gives more detail on the same packets:
 
 ---
 
-## 8. Limitations
+## Limitations
 
 <div align="justify">
 
@@ -433,14 +398,14 @@ Wireshark also gives more detail on the same packets:
 
 ---
 
-## 9. Ethical note
+## Ethical Note
 
 > [!WARNING]
 > All traffic in this report was generated by me, on my own virtual machine and home network. Capturing other people's traffic without permission is illegal in most countries, including under Pakistan's Prevention of Electronic Crimes Act (PECA) 2016. Only run a sniffer on networks you own or are authorised to monitor.
 
 ---
 
-## 10. Conclusion
+## Conclusion
 
 <div align="justify">
 
@@ -450,11 +415,9 @@ A natural next step is turning this kind of visibility into detection, for examp
 
 </div>
 
-<br>
+---
 
 <div align="center">
-
----
 
 **Ali Abbas Qazi**
 
